@@ -9,7 +9,5 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <>
-    <App offersCount={CARDS_COUNT} />;
-  </>
+  <App offersCount={CARDS_COUNT} />
 );

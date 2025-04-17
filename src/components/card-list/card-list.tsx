@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import type { Offer } from '../../types/types';
 
-import { Card } from '../card/card';
+import Card from '../card/card';
 
 type CardListProps = {
     offers: Offer[];

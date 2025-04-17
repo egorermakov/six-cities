@@ -30,17 +30,17 @@ function Main ({ offers }: MainProps): JSX.Element {
                 <li className="header__nav-item user">
                   <Link
                     className="header__nav-link header__nav-link--profile"
-                    to="#"
+                    to="#todo"
                   >
                     <div className="header__avatar-wrapper user__avatar-wrapper"></div>
                     <span className="header__user-name user__name">
-                                          Oliver.conner@gmail.com
+                      Oliver.conner@gmail.com
                     </span>
                     <span className="header__favorite-count">3</span>
                   </Link>
                 </li>
                 <li className="header__nav-item">
-                  <Link className="header__nav-link" to="#">
+                  <Link className="header__nav-link" to="#todo">
                     <span className="header__signout">Sign out</span>
                   </Link>
                 </li>
@@ -109,13 +109,13 @@ function Main ({ offers }: MainProps): JSX.Element {
                                       Popular
                   </li>
                   <li className="places__option" tabIndex={0}>
-                                      Price: low to high
+                    Price: low to high
                   </li>
                   <li className="places__option" tabIndex={0}>
-                                      Price: high to low
+                    Price: high to low
                   </li>
                   <li className="places__option" tabIndex={0}>
-                                      Top rated first
+                    Top rated first
                   </li>
                 </ul>
               </form>

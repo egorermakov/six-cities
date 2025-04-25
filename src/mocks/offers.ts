@@ -8,11 +8,12 @@ const offers: Offer[] = [
     title: 'Beautiful & luxurious apartment at great location',
     isPremium: true,
     isFavorite: false,
-    previewImage: 'img/apartment-01.jpg',
-    type: 'apartment',
-    city: {
-      name: 'Amsterdam'
-    }
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+      zoom: 1
+    },
+    type: 'apartment'
   },
   {
     id: 2,
@@ -21,11 +22,12 @@ const offers: Offer[] = [
     title: 'A apartment at great location beautiful',
     isPremium: false,
     isFavorite: false,
-    previewImage: 'img/apartment-02.jpg',
-    type: 'room',
-    city: {
-      name: 'Paris'
-    }
+    location: {
+      latitude: 52.369553943508,
+      longitude: 4.85309666406198,
+      zoom: 1
+    },
+    type: 'room'
   },
   {
     id: 3,
@@ -34,11 +36,12 @@ const offers: Offer[] = [
     title: 'Great location apartment at great location',
     isPremium: true,
     isFavorite: true,
-    previewImage: 'img/apartment-03.jpg',
-    type: 'house',
-    city: {
-      name: 'Paris'
-    }
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
+      zoom: 1
+    },
+    type: 'house'
   },
   {
     id: 4,
@@ -47,11 +50,12 @@ const offers: Offer[] = [
     title: 'Luxurious & beautiful apartment at great location',
     isPremium: false,
     isFavorite: true,
-    previewImage: 'img/apartment-01.jpg',
-    type: 'hotel',
-    city: {
-      name: 'Amsterdam'
-    }
+    location: {
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+      zoom: 1
+    },
+    type: 'hotel'
   },
 ];
 

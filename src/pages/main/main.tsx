@@ -1,14 +1,15 @@
-import {Link} from 'react-router-dom';
-
-import type { Offer } from '../../types/types';
+import { Link } from 'react-router-dom';
+import type { City, Offer } from '../../types/types';
 
 import CardList from '../../components/card-list/card-list';
+import Map from '../../components/map/map';
 
 type MainProps = {
+  city: City,
   offers: Offer[]
 }
 
-function Main ({ offers }: MainProps): JSX.Element {
+function Main ({ city, offers }: MainProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -96,7 +97,7 @@ function Main ({ offers }: MainProps): JSX.Element {
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
-                                  Popular
+                  Popular
                   <svg className="places__sorting-arrow" width="7" height="4">
                     <use xlinkHref="#icon-arrow-select"></use>
                   </svg>
@@ -106,7 +107,7 @@ function Main ({ offers }: MainProps): JSX.Element {
                     className="places__option places__option--active"
                     tabIndex={0}
                   >
-                                      Popular
+                    Popular
                   </li>
                   <li className="places__option" tabIndex={0}>
                     Price: low to high
@@ -122,7 +123,7 @@ function Main ({ offers }: MainProps): JSX.Element {
               <CardList offers={offers} />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map locations={offers.map((offer) => offer.location)} city={city} />
             </div>
           </div>
         </div>

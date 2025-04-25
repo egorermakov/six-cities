@@ -3,9 +3,8 @@ import type { Offer } from '../../types/types';
 import { AppRoute, MAX_PERCENT_STARS_WIDTH, STARS_COUNT } from '../../const';
 
 type CardProps = Offer & {
-  onMouseMove?: (id: number) => void;
-  onMouseLeave?: () => void;
-  place?: 'cities' | 'favorites';
+  onMouseMove: (id: number) => void;
+  onMouseLeave: () => void;
 };
 
 const Card = ({
@@ -15,11 +14,9 @@ const Card = ({
   title,
   isPremium,
   isFavorite,
-  previewImage,
   type,
-  place = 'cities',
-  onMouseMove = () => void 0,
-  onMouseLeave = () => void 0,
+  onMouseMove,
+  onMouseLeave,
 }: CardProps): JSX.Element => {
   const handleMouseMove = () => {
     onMouseMove(id);
@@ -27,7 +24,7 @@ const Card = ({
 
   return (
     <article
-      className={`${place}__card place-card`}
+      className="cities__card place-card"
       onMouseMove={handleMouseMove}
       onMouseLeave={onMouseLeave}
     >
@@ -36,11 +33,11 @@ const Card = ({
           <span>Premium</span>
         </div>
       )}
-      <div className={`${place}__image-wrapper place-card__image-wrapper`}>
+      <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
           <img
             className="place-card__image"
-            src={previewImage}
+            src="img/apartment-01.jpg"
             width="260"
             height="200"
             alt="Place image"

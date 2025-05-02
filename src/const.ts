@@ -1,4 +1,4 @@
-import { Location, CityName } from './types/types';
+import { Offer, Location, CityName, SortName } from './types/types';
 
 export const cities = ['Paris', 'Cologne', 'Brussels', 'Amsterdam', 'Hamburg', 'Dusseldorf'] as const;
 export const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as const;
@@ -8,7 +8,6 @@ export const MAX_PERCENT_STARS_WIDTH = 100;
 
 export const URL_MARKER_DEFAULT = 'img/pin.svg';
 export const URL_MARKER_CURRENT = 'img/pin-active.svg';
-
 
 export enum AppRoute {
     Root = '/',
@@ -23,11 +22,23 @@ export enum AuthorizationStatus {
     Unknown = 'UNKNOWN',
 }
 
-type CityLocation = {
-  [key in CityName]: Location
+export enum Sorting {
+  Popular = 'Popular',
+  PriceIncrease = 'Price: low to high',
+  PriceDecrease = 'Price: high to low',
+  TopRated = 'Top rated first',
 }
 
-export const CityCenter: CityLocation = {
+export const Comprator: {
+  [key in SortName]: (a: Offer, b: Offer) => number
+} = {
+  Popular: () => 0,
+  PriceIncrease: (a, b) => a.price - b.price,
+  PriceDecrease: (a, b) => b.price - a.price,
+  TopRated: (a, b) => b.rating - a.rating,
+};
+
+export const CityLocation: { [key in CityName]: Location } = {
   'Paris': {
     latitude: 48.85661,
     longitude: 2.351499,
